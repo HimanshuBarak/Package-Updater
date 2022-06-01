@@ -1,0 +1,41 @@
+{
+  "name": "dyte-vit-2022-himanshubarak",
+  "version": "1.0.0",
+  "description": "[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-c66648af7eb3fe8bc4f294546bfd86ef473780cde1dea487d3c4ff354943c9ae.svg)](https://classroom.github.com/online_ide?assignment_repo_id=7944081&assignment_repo_type=AssignmentRepo)\r <div id=\"top\"></div>\r <!--\r *** Thanks for checking out the Best-README-Template. If you have a suggestion\r *** that would make this better, please fork the repo and create a pull request\r *** or simply open an issue with the tag \"enhancement\".\r *** Don't forget to give the project a star!\r *** Thanks again! Now go create something AMAZING! :D\r -->",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dyte-submissions/dyte-vit-2022-HimanshuBarak.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dyte-submissions/dyte-vit-2022-HimanshuBarak/issues"
+  },
+  "homepage": "https://github.com/dyte-submissions/dyte-vit-2022-HimanshuBarak#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.17.10",
+    "@babel/core": "^7.18.2",
+    "@babel/node": "^7.17.10",
+    "@babel/preset-env": "^7.18.2",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^8.16.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-babel": "^5.3.1",
+    "eslint-plugin-import": "^2.26.0"
+  },
+  "dependencies": {
+    "@octokit/app": "^12.0.5",
+    "@octokit/rest": "^18.12.0",
+    "csv-parser": "^3.0.0",
+    "dotenv": "^16.0.1",
+    "node-csv": "^0.1.2",
+    "node-fetch": "^3.2.4",
+    "octokit": "^1.7.1"
+  }
+}
