@@ -3,17 +3,17 @@
 
 import { App } from 'octokit';
 
-import fetch from 'node-fetch';
 import dotenv from 'dotenv';
 import csv from 'csv-parser'
 import * as fs from 'fs'
 
 
-
+const repoSet = new Set()
+let results = [];
 
 dotenv.config();
 
-//const csv = csvall.createParser()
+
 
 let app = new App({
     appId: process.env.GITHUB_APP_IDENTIFIER,
@@ -25,61 +25,30 @@ let app = new App({
 
 const { data } = await app.octokit.request("/app");
 let arr=[]
-let owner = "HimanshuBarak"
-let repo  = "scrimba-clone"
-let pck='react'
-let vr ='17.02.0'
 
-console.log(" hehe "+process.argv[2])
-let repoSet = new Set()
-let results = [];
-fs.createReadStream('input.csv')
+
+let update=false
+const myArgs = process.argv.slice(2);
+
+const pname = myArgs[2].split("@")
+let packageName = pname[0]
+let version =pname[1]
+if(myArgs.length ===4 && myArgs[3]==='-update')
+    update=true;
+
+fs.createReadStream(myArgs[1])
   .pipe(csv())
   .on('data', (data) => results.push(data))
   .on('end', () => {
-    repoSet.add(results[0].name);
+    readdata(results)
   });
 
-  console.log(repoSet)
- // console.log(results[1].name)
-/*
-async function intialize(){
-   const result =await app.octokit.auth({type:"app"}).then(auth => {
-
-      return fetch(`https://api.github.com/repos/${owner}/${repo}/` + "installation", { headers: {
-          authorization: `Bearer ${auth.token}`,
-          accept: 'application/vnd.github.machine-man-preview+json',
-      }})
-   });
-   
-   const installationId = (await result.json()).id;
-   
-   const octokit = await app.getInstallationOctokit(installationId)
-}
-
- 
-async function readpck(){
-   const resp =await octokit.request("GET /repos/{owner}/{repo}/contents/{path}",{
-      owner: 'HimanshuBarak',
-      repo: 'scrimba-clone',
-      path: 'package.json',
-   })
-   let obj =JSON.parse(Buffer.from(resp.data.content, 'base64'))
-   
-    obj = updatePackageJSONObject(obj, 'react', '16.0.5');
-   //updating the object
-   //console.log(obj)
-   let branchname = await createRemoteBranch(octokit,owner,repo,pck,vr)
-   //console.log(branchname)
-   await commitUpdatedObject(octokit,owner,repo,branchname,obj)
-   await createPR(octokit, owner, repo, branchname);
-}
-
-readpck()
-*/
-
-
-
+  function readdata(arr)
+  {
+     arr.map(data =>repoSet.add(data.name))
+     
+  }
+  
 
 
 
@@ -166,7 +135,7 @@ const updatePackageJSONObject = (packageJSONObject, packageName, newVersion) => 
 console.log("authenticated as %s", data.name);
 
 
-/*
+
 for await (const { octokit, repository } of app.eachRepository.iterator()) {
   
    if(repoSet.has(repository.name)){
@@ -177,36 +146,33 @@ for await (const { octokit, repository } of app.eachRepository.iterator()) {
       })
       let obj =JSON.parse(Buffer.from(resp.data.content, 'base64'))
       
-      let v =obj.dependencies.react
+      let v =obj.dependencies[packageName]
+      
       if(v.charAt(0) === '^' || v.charAt(0) === '~')
        v=v.substring(1)
-      let ans =comapreVersion(v,"17.0.1") 
+      let ans =comapreVersion(v,version) 
       //console.log(repository.url)
       arr.push({name:repository.name,Repository:repository.url,version:v,satisfied:ans})
       
       
-   
-    obj = updatePackageJSONObject(obj,pck,vr);
-   //updating the object
-   //console.log(obj)
-  
-   
-      let branchname = await createRemoteBranch(octokit,repository.owner.login,repository.name,pck,vr)
-   
-   
-   //console.log(branchname)
-   await commitUpdatedObject(octokit,repository.owner.login,repository.name,branchname,obj)
-   await createPR(octokit, repository.owner.login,repository.name, branchname);
+    if(update && !ans) {
+      obj = updatePackageJSONObject(obj,packageName,version);
+      let branchname = await createRemoteBranch(octokit,repository.owner.login,repository.name,packageName,version)
+      await commitUpdatedObject(octokit,repository.owner.login,repository.name,branchname,obj)
+      await createPR(octokit, repository.owner.login,repository.name, branchname);
+    }
+    
    }
 
       
 }
 
-*/
 
-//console.table(arr)
+
+console.table(arr)
 function comapreVersion(version1, version2) {
    //converting into array by splitting at .
+   
    version1 = version1.split('.');
    version2 = version2.split('.');
    // Finding the max length of either array
