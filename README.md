@@ -85,7 +85,8 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
+The project is a assignment project for dyte in which the main purpose of the project is to update the package  version in the repository provided by the user.
+To update the repository octokit api is used along githapp for authentication purpose
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -93,14 +94,9 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 
 ### Built With
 
-* [Next.js](https://nextjs.org/)
-* [React.js](https://reactjs.org/)
-* [Vue.js](https://vuejs.org/)
-* [Angular](https://angular.io/)
-* [Svelte](https://svelte.dev/)
-* [Laravel](https://laravel.com)
-* [Bootstrap](https://getbootstrap.com)
-* [JQuery](https://jquery.com)
+
+* [Node.js](https://node.org/)
+
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -114,7 +110,7 @@ To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
+
 * npm
   ```sh
   npm install npm@latest -g
@@ -122,19 +118,25 @@ This is an example of how to list things you need to use the software and how to
 
 ### Installation
 
-1. Get a free API Key at [https://example.com](https://example.com)
+1. First of all install my Gitapp on the user/organizations account to whon the repositories will belong(have access)   [https://github.com/apps/dyte-package-updater](https://github.com/apps/dyte-package-updater)
 2. Clone the repo
    ```sh
-   git clone https://github.com/github_username/repo_name.git
+   git clone https://github.com/dyte-submissions/dyte-vit-2022-HimanshuBarak.git
    ```
 3. Install NPM packages
    ```sh
    npm install
-   ```
-4. Enter your API in `config.js`
+ ```
+4. You need to create a .env file as the demo is crucial for evaluation just for this case I have even added the .env file to the repo
+But other you would need to create a .env in src folder
+and Enter the below configurations
+
    ```js
-   const API_KEY = 'ENTER YOUR API';
+   GITHUB_APP_IDENTIFIER = 206175
+   GITHUB_PRIVATE_KEY = "-----BEGIN RSA PRIVATE KEY-----privatekey"
    ```
+You will need to generate your private key from github first
+
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -143,10 +145,18 @@ This is an example of how to list things you need to use the software and how to
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+Using the following commands to run the tool 
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+To check package verison
+```sh
+ node index.js -i input.csv axios@0.24.0 
+ ```
+ 
+For updation
 
+```sh
+ node index.js -i input.csv axios@0.24.0 -update
+```
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
@@ -195,7 +205,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
+
 
 Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
 
