@@ -160,6 +160,7 @@ for await (const { octokit, repository } of app.eachRepository.iterator()) {
       let branchname = await createRemoteBranch(octokit,repository.owner.login,repository.name,packageName,version)
       await commitUpdatedObject(octokit,repository.owner.login,repository.name,branchname,obj)
       await createPR(octokit, repository.owner.login,repository.name, branchname);
+      console.log("Pull request created to update package for  "+repository.name)
     }
     
    }
