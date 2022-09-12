@@ -1,4 +1,4 @@
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-c66648af7eb3fe8bc4f294546bfd86ef473780cde1dea487d3c4ff354943c9ae.svg)](https://classroom.github.com/online_ide?assignment_repo_id=7944081&assignment_repo_type=AssignmentRepo)
+
 <div id="top"></div>
 <!--
 *** Thanks for checking out the Best-README-Template. If you have a suggestion
@@ -30,14 +30,14 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/github_username/repo_name">
+  <a href="https://github.comHimanshuBarak/Package-Updater">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-<h3 align="center">project_title</h3>
+<h3 align="center">Package Updater</h3>
 
   <p align="center">
-    project_description
+    A CLI tool built in Node js to check and update dependency version in github Repositories
     <br />
     <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
     <br />
@@ -83,10 +83,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-The project is a assignment project for dyte in which the main purpose of the project is to update the package  version in the repository provided by the user.
-To update the repository octokit api is used along githapp for authentication purpose
+
+A CLI tool for updating dependencies in github repositories
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -226,16 +225,16 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/github_username/repo_name.svg?style=for-the-badge
-[contributors-url]: https://github.com/github_username/repo_name/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/github_username/repo_name.svg?style=for-the-badge
-[forks-url]: https://github.com/github_username/repo_name/network/members
-[stars-shield]: https://img.shields.io/github/stars/github_username/repo_name.svg?style=for-the-badge
-[stars-url]: https://github.com/github_username/repo_name/stargazers
-[issues-shield]: https://img.shields.io/github/issues/github_username/repo_name.svg?style=for-the-badge
-[issues-url]: https://github.com/github_username/repo_name/issues
-[license-shield]: https://img.shields.io/github/license/github_username/repo_name.svg?style=for-the-badge
-[license-url]: https://github.com/github_username/repo_name/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/HimanshuBarak/Package-Updater.svg?style=for-the-badge
+[contributors-url]: https://github.com/HimanshuBarak/Package-Updater/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/HimanshuBarak/Package-Updater.svg?style=for-the-badge
+[forks-url]: https://github.com/HimanshuBarak/Package-Updater/network/members
+[stars-shield]: https://img.shields.io/github/stars/HimanshuBarak/Package-Updater.svg?style=for-the-badge
+[stars-url]: https://github.com/HimanshuBarak/Package-Updater/stargazers
+[issues-shield]: https://img.shields.io/github/issues/HimanshuBarak/Package-Updater.svg?style=for-the-badge
+[issues-url]: https://github.com/HimanshuBarak/Package-Updater/issues
+[license-shield]: https://img.shields.io/github/license/HimanshuBarak/Package-Updater.svg?style=for-the-badge
+[license-url]: https://github.com/HimanshuBarak/Package-Updater/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/linkedin_username
+[linkedin-url]: https://www.linkedin.com/in/himanshubarak/
 [product-screenshot]: images/screenshot.png
